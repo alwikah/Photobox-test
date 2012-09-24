@@ -230,6 +230,27 @@ body{
 #hidden{
     display:none;
 }
+.v-slider{
+    height:360px;
+    float:left;
+    width:56px;
+}
+.ui-slider-vertical .ui-slider-range-min{
+    background: green;
+}
+.ui-slider .ui-slider-handle { 
+    position: absolute; 
+    z-index: 2; 
+    width: 55px; 
+    height: 1.2em; 
+    cursor: default; 
+}
+.ui-slider-vertical .ui-slider-handle { 
+    left: 0em; 
+    margin-left: 0; 
+    margin-bottom: -.6em; 
+    display:none;
+}
 
 
 

@@ -1,0 +1,134 @@
+body{
+    font-size:62.5%;
+}
+
+#demo-frame > div.demo {
+    padding: 10px !important;
+}
+
+.demo{
+    margin:50px 
+}
+
+#slider {
+    margin: 10px;
+
+}
+
+.v-slider{
+    float:left;
+    margin:5px 5px 0 5px;
+}
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+#input-values{
+    padding:0;
+    margin:0;
+    float:left;
+    width:200px;
+    list-style: none;
+}
+
+#input-values input{
+    border:1px solid #ccc;
+    color:#f6931f;
+    font-weight:bold;
+    width:50px;
+    padding:5px;
+    margin:3px;
+    background:#000;
+}
+
+#graph{
+    bottom: 7px;
+    float: right;
+    left: 0;
+    padding: 0 53px 10px;
+    position: absolute;
+    width: 474px;
+}
+
+.button{
+    cursor: pointer;
+
+}
+#graph .v-slider{
+    height:200px;
+}
+
+.ui-widget-content{
+    border:0;
+    width:20px;
+    background: none;
+}
+#slider-vertical0 div,
+#slider-vertical2 div,
+#slider-vertical4 div,
+#slider-vertical6 div,
+#slider-vertical8 div
+{
+    background:#FF6F00;
+    border-top:1px solid #000;
+    border-right:1px solid #000;
+    border-left:1px solid #000;
+}
+#slider-vertical1 div,
+#slider-vertical3 div,
+#slider-vertical5 div,
+#slider-vertical7 div,
+#slider-vertical9 div{
+    background:#800080;
+    border-top:1px solid #000;
+    border-right:1px solid #000;
+    border-left:1px solid #000;
+
+}
+#slider-vertical1,
+#slider-vertical3,
+#slider-vertical5,
+#slider-vertical7,
+#slider-vertical9
+{
+    margin-right:30px!important;
+}
+.ui-slider-range{
+    width:29px!important;
+}
+.ui-slider-handle{
+    background: none!important;
+    width:30px!important;
+    display:none;
+}
+
+.ui-slider-vertical .ui-slider-handle{
+    left:0em!important;
+}
+
+#graph-background{
+    background:url(graph.gif) no-repeat 0 0px;
+    float:right;
+    width: 477px;
+    height:224px;
+
+    position: relative;
+}

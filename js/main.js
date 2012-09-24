@@ -2,14 +2,13 @@ var columnNumber = $("#columnNumberPicker").val();
 var updateColumnNumber;
 
 $(document).ready(function(){
+    createSliderColumn();
     $('#box').fadeIn();
     centerElm('#box');
     $(window).resize(function(){
         centerElm('#box');
     });
     createColumns();
-    
-
 });
 
 function centerElm(elem){
@@ -39,22 +38,39 @@ var createColumns = function(){
     });
 };
 var cloneColumn = function(num){
-    var i;
-    var colNo = num;
-    var newColumnAmount = "";
-    for (i=0;i<colNo;i++){
-        var n = i+1;
-        var html = "<ul class=clone'>\
-                        <li class='col'>\
-                            <div class='inputContainer'>\
-                                <div class='columnName'>value "+ n +"</div>\
-                                    <input type='text' value='' id=vala"+ n +">\
-                                    <input type='text' value='' id=valb"+ n +">\
-                                </div>\
-                        </li>\
-                    </ul>";
-        newColumnAmount += html;          
+    var i, n, html = "";
+    for (i=0;i<num;i++){
+        n = i+1;
+        html += "<ul id='column"+ n +"'>";
+        html +=     "<li class='col'>";
+        html +=         "<div class='slider-inner'><div id='slider-vertical' style='height:200px;''></div></div>";
+        html +=         "<div class='inputContainer'>";
+        html +=             "<div class='columnName'>value "+ n +"</div>";
+        html +=             "<input type='text' value='' id=vala"+ n +">";
+        html +=             "<input type='text' value='' id=valb"+ n +">";
+        html +=         "</div>";
+        html +=     "</li>";
+        html += "</ul>";          
     }
-    $("#columns").html(newColumnAmount);
+    $("#columns").html(html);
     
 };
+
+function createSliderColumn(){
+$(function() {
+        $(".v-slider").slider({
+            orientation: "vertical",
+            range: "min",
+            min: 0,
+            max: 100,
+            value: 30,
+            slide: function( event, ui ) {
+                $("#amount").val(ui.value);
+            }
+        });
+        $("#amount").val( $("#slider-vertical").slider("value"));
+        console.log($("#slider-vertical").slider("value"));
+    });
+}
+
+
