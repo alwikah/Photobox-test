@@ -1,10 +1,15 @@
+var columnNumber = $("#columnNumberPicker").val();
+var updateColumnNumber;
+
 $(document).ready(function(){
     $('#box').fadeIn();
     centerElm('#box');
     $(window).resize(function(){
         centerElm('#box');
     });
-    drawCanvas();
+    createColumns();
+    
+
 });
 
 function centerElm(elem){
@@ -22,8 +27,34 @@ function centerElm(elem){
     if(window_height>elem_height){
         $(elem).css("marginTop", center_pos);
     } else {
-        $(elem).css("marginTop", '0');
+        $(elem).css("marginTop", "0");
     }
 }
 
-
+var createColumns = function(){
+    $("#columnNumberPicker").change(function(){
+        var currentNumberOfColumns = $("#columns ul").length;        
+        var selectedNumber = $("#columnNumberPicker").val();
+        cloneColumn(selectedNumber);    
+    });
+};
+var cloneColumn = function(num){
+    var i;
+    var colNo = num;
+    var newColumnAmount = "";
+    for (i=0;i<colNo;i++){
+        var n = i+1;
+        var html = "<ul class=clone'>\
+                        <li class='col'>\
+                            <div class='inputContainer'>\
+                                <div class='columnName'>value "+ n +"</div>\
+                                    <input type='text' value='' id=vala"+ n +">\
+                                    <input type='text' value='' id=valb"+ n +">\
+                                </div>\
+                        </li>\
+                    </ul>";
+        newColumnAmount += html;          
+    }
+    $("#columns").html(newColumnAmount);
+    
+};

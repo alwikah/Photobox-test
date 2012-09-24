@@ -27,17 +27,13 @@
 				<div id="controls">
 					<div id="header">
 						<span>Select the number of colums you require:</span>
-						<select>
+						<select id="columnNumberPicker">
+							<option value="">Select the number of columns</option>
 							<option value="1">1</option>
 							<option value="2">2</option>
 							<option value="3">3</option>
 							<option value="4">4</option>
 							<option value="5">5</option>
-							<option value="6">6</option>
-							<option value="7">7</option>
-							<option value="8">8</option>
-							<option value="9">9</option>
-							<option value="10">10</option>
 						</select>
 					</div>
 				</div>
@@ -48,7 +44,7 @@
 						<div></div>
 						<div></div>
 						<div></div>
-						<div></div>
+						<div class="last"></div>
 					</div>
 					<div id="xValue">
 						<ul>
@@ -61,27 +57,9 @@
 							<li class="last">0</li>
 						</ul>
 					</div>
-					<div id="columns">
-						<ul>
-							<li class="col1">
-								<ul class="inputContainer">
-									<li><input type="text" value=""></li>
-								</ul>
-								<ul class="inputContainer">
-									<li><input type="text" value=""></li>
-								</ul>
-							</li>
-						</ul>
+					<div id="columns">						
 					</div>
-					<div id="yValue">
-						<ul>
-							<li class="first">value 01</li>
-							<li>value 01</li>
-							<li>value 01</li>
-							<li>value 01</li>
-							<li>value 01</li>
-						</ul>
-					</div>
+					<!-- <div id="yValue"></div> -->
 					<div id="graphContainer">
 					</div>
 				</div>
@@ -100,5 +78,19 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
-    </body>
+        <div id="hidden">
+        	<ul class="clone">
+				<li class="col">
+					<div class="inputContainer">
+						<div class="columnName">value 01</div>
+						<input type="text" value="">
+						<input type="text" value="">
+					</div>
+				</li>																			
+			</ul>				
+        </div>
+        <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
+  		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js" type="text/javascript"></script>
+	</body>
 </html>
